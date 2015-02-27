@@ -409,6 +409,9 @@ if (!net.brehaut) { net.brehaut = {}; }
           pad ( Math.round(this.green * max).toString( 16 ).toUpperCase(), bytes ),
           pad ( Math.round(this.blue * max).toString( 16 ).toUpperCase(), bytes )
         ];
+        if (this.alpha < 1) {
+          css.splice(1, 0, pad ( Math.round(this.alpha * max).toString( 16 ).toUpperCase(), bytes ));
+        }
 
         return css.join('');
     },    
